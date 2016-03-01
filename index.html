@@ -4,21 +4,34 @@
 	<meta charset="UTF-8">
 	<title></title>
 	<script type="text/javascript" src="jquery-1.11.3.min.js"></script>
-	<script type="text/javascript" src="jquery.loopmovement.min.js"></script>
-	<link rel="stylesheet" href="jquery.loopmovement.css" type="text/css" />
+	<script type="text/javascript" src="jquery.loopmovement.js"></script>
+	<style type="text/css">
+		#box { position:relative; height:100px; width:500px;  overflow:hidden;}
+		#box1 { position:absolute;  }
+		.top { top:0px; }
+		.bottom { bottom:0px; }
+		.left { left:0px; }
+		.right { right:0px; }
+		.content { width:500px; height:100px; background:#f00; font-size:50px;}
+		.toLeft { float:left; }
+	</style>
+
 </head>
 <body>
+<!-- 第一个div相对定位,第二个div绝对定位,如果左右浮动主体需要添加toleft,否则免 -->
 	<div id="box">
 		<div id="box1">
 			<div class="content toLeft">我是测试</div>
 		</div>
 	</div>
-	
+
 	<script type="text/javascript">
 		$('#box1').loopmovement({
-			'direction':'top', 	//方向
+			'direction':'right', 	//方向
 			'speed':20				//速度,越小越快
 		});
 	</script>
+
+
 </body>
 </html>

@@ -1,9 +1,3 @@
-/**
- * @brief a jquery plugin for loopmovement
- * @author church
- * @License MIT
- * @date 2015-12-30
- */
 (function($) {
 	$.fn.extend({
 		'loopmovement' : function(config) {
@@ -16,13 +10,17 @@
 			switch(_defaultConfig.direction) {
 				default:
 				case "top":
+					_this.children().clone().appendTo(_this);
+					break;
 				case "left":
-					_defaultConfig.direction == 'left' && _this.css('width', _this.width() * 2);
+					_this.css('width', _this.width() * 2);
 					_this.children().clone().appendTo(_this);
 					break;
 				case "right":
+					_this.css('width', _this.width() * 2);
+					_this.children().clone().prependTo(_this);
+					break;
 				case "bottom":
-					_defaultConfig.direction == 'right' && _this.css('width', _this.width() * 2);
 					_this.children().clone().prependTo(_this);
 					break;
 			}
